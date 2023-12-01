@@ -118,7 +118,8 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/*/NopCommerceTestRunner.java</include>
+<!--                        <include>**/*/NopCommerceTestRunner.java</include>-->
+                        <include>**/*/BankGuruTestRunner.java</include>
                     </includes>
                 </configuration>
                 <!--                <configuration>-->

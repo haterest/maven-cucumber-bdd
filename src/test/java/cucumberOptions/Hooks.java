@@ -88,7 +88,8 @@ public class Hooks {
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }
 
-            driver.get(GlobalConstant.USER_PAGE_URL);
+            // driver.get(GlobalConstant.USER_PAGE_URL); -> nopCommerce
+            driver.get(GlobalConstant.BANKGURU_PAGE_URL);
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             log.info("------------- Started the browser -------------");
         }

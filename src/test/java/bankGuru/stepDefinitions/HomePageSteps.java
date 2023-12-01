@@ -17,7 +17,7 @@ public class HomePageSteps extends BasePage {
     @Then("^Homepage displayed$")
     public void homepageDisplayed() {
         waitForElementVisible(driver, HomePageUI.WELCOME_MESSAGE);
-        Assert.assertFalse(isElementDisplayed(driver, HomePageUI.WELCOME_MESSAGE));
+        Assert.assertTrue(isElementDisplayed(driver, HomePageUI.WELCOME_MESSAGE));
     }
 
 }
