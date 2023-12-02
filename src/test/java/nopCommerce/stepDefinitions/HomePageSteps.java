@@ -20,8 +20,4 @@ public class HomePageSteps extends BasePage {
         Assert.assertTrue(isElementDisplayed(driver, BasePageUI.DYNAMIC_MENU_LINK_BY_NAME, nameMenuLink));
     }
 
-    public void Just_Another_TestCase(){
-        // to do
-    }
-
 }
