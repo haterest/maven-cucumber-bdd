@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class Hooks {
     // Run for many thread
@@ -43,36 +43,26 @@ public class Hooks {
 
                 switch (browser) {
                     case "chrome":
-                        WebDriverManager.chromedriver().setup();
                         driver = new ChromeDriver();
                         break;
                     case "hchrome":
-                        WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("headless");
+                        chromeOptions.addArguments("--headless=new");
                         chromeOptions.addArguments("window-size=1920x1080");
                         driver = new ChromeDriver(chromeOptions);
                         break;
                     case "firefox":
-                        WebDriverManager.firefoxdriver().setup();
-                        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-                        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                         driver = new FirefoxDriver();
                         break;
                     case "hfirefox":
-                        WebDriverManager.firefoxdriver().setup();
-                        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-                        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                         FirefoxOptions firefoxOptions = new FirefoxOptions();
-                        firefoxOptions.setHeadless(true);
+                        firefoxOptions.addArguments("--headless=new");
                         driver = new FirefoxDriver(firefoxOptions);
                         break;
                     case "ie":
-                        WebDriverManager.iedriver().arch32().setup();
                         driver = new InternetExplorerDriver();
                         break;
                     default:
-                        WebDriverManager.chromedriver().setup();
                         driver = new ChromeDriver();
                         break;
                 }
@@ -90,7 +80,7 @@ public class Hooks {
 
             // driver.get(GlobalConstant.USER_PAGE_URL); -> nopCommerce
             driver.get(GlobalConstant.BANKGURU_PAGE_URL);
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             log.info("------------- Started the browser -------------");
         }
         return driver;
