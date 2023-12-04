@@ -44,10 +44,10 @@ public class Hooks {
                 }
                 switch (browser) {
                     case "chrome":
-//                        Path path = Paths.get(GlobalConstant.BROWSER_EXTENSIONS + "\\adblock_chrome.crx");
-//                        File extensionFilePath = new File(path.toUri());
-//                        ChromeOptions options = new ChromeOptions();
-//                        options.addExtensions(extensionFilePath);
+                        Path path = Paths.get(GlobalConstant.BROWSER_EXTENSIONS + "\\adblock_chrome.crx");
+                        File extensionFilePath = new File(path.toUri());
+                        ChromeOptions options = new ChromeOptions();
+                        options.addExtensions(extensionFilePath);
                         driver = new ChromeDriver();
                         break;
                     case "hchrome":

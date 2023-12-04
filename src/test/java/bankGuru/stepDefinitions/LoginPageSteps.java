@@ -24,9 +24,9 @@ public class LoginPageSteps extends BasePage {
     public void openRegisterPage() {
         waitForElementClickable(driver, LoginPageUI.REGISTER_LINK);
         clickToElement(driver, LoginPageUI.REGISTER_LINK);
-        switchToFrameiFrame(driver, LoginPageUI.IFRAME_SCREEN);
-        clickToElement(driver, LoginPageUI.IFRAME_CLOSE_BUTTON);
-        switchToDefaultContent(driver);
+//        switchToFrameiFrame(driver, LoginPageUI.IFRAME_SCREEN);
+//        clickToElement(driver, LoginPageUI.IFRAME_CLOSE_BUTTON);
+//        switchToDefaultContent(driver);
     }
 
     @When("^Input valid UserID and Password to textbox$")
