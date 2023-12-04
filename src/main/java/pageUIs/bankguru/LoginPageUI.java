@@ -5,6 +5,6 @@ public class LoginPageUI {
     public static final String USER_ID_TEXTBOX = "css=input[type='text']";
     public static final String PASSWORD_TEXTBOX = "css=input[type='password']";
     public static final String LOGIN_BUTTON = "css=input[type='submit']";
-    public static final String IFRAME_SCREEN = "css=iframe[id='google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0']";
+    public static final String IFRAME_SCREEN = "css=iframe[aria-label='Advertisement']";
     public static final String IFRAME_CLOSE_BUTTON = "css=#dismiss-button";
 }

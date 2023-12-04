@@ -2,8 +2,8 @@ package cucumberOptions;
 
 import commons.GlobalConstant;
 import cucumber.api.java.Before;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
+import java.nio.file.Path;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
+import java.io.File;
+import java.nio.file.Paths;
 import java.time.Duration;
 
 public class Hooks {
@@ -40,9 +42,12 @@ public class Hooks {
                         browser = "firefox";
                     }
                 }
-
                 switch (browser) {
                     case "chrome":
+//                        Path path = Paths.get(GlobalConstant.BROWSER_EXTENSIONS + "\\adblock_chrome.crx");
+//                        File extensionFilePath = new File(path.toUri());
+//                        ChromeOptions options = new ChromeOptions();
+//                        options.addExtensions(extensionFilePath);
                         driver = new ChromeDriver();
                         break;
                     case "hchrome":
@@ -52,6 +57,11 @@ public class Hooks {
                         driver = new ChromeDriver(chromeOptions);
                         break;
                     case "firefox":
+//                        FirefoxProfile profile = new FirefoxProfile();
+//                        File files = new File(GlobalConstant.BROWSER_EXTENSIONS + "\\adblock_firefox.xpi");
+//                        profile.addExtension(files);
+//                        FirefoxOptions ffOptions = new FirefoxOptions();
+//                        ffOptions.setProfile(profile);
                         driver = new FirefoxDriver();
                         break;
                     case "hfirefox":
