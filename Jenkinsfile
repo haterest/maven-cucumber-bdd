@@ -1,10 +1,4 @@
 pipeline {
-ansiColor('xterm') {
-    // some block
-}
-timestamps {
-    // some block
-}
     agent any
     stages {
         stage('1 - Get Code') {
